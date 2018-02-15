@@ -24,7 +24,14 @@ var lessToJs = exports.lessToJs = function lessToJs(lessFile) {
         lessVars[key] = definition[1];
     });
 
-    return 'export default ' + (0, _jsObjectPrettyPrint.pretty)(lessVars);
+    var sortedKeys = Object.keys(lessVars).sort();
+    var sortedLessVars = {};
+
+    sortedKeys.forEach(function (sortedKey) {
+        sortedLessVars[sortedKey] = lessVars[sortedKey];
+    });
+
+    return 'export default ' + (0, _jsObjectPrettyPrint.pretty)(sortedLessVars);
 };
 
 var generateJsFile = exports.generateJsFile = function generateJsFile(lessFile, destFile) {

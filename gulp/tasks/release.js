@@ -3,4 +3,4 @@ import {release} from 'gulp-release-it';
 
 release(gulp);
 
-gulp.task('complete-release', gulp.series('gh-pages', 'bump-complete-release'));
+gulp.task('complete-release', gulp.series('build', 'gh-pages', 'bump-complete-release'));
