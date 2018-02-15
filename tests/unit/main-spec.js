@@ -4,11 +4,11 @@ describe('javascript generation', () => {
     describe('lessToJs', () => {
         it('should parse variables', () => {
             expect(lessToJs(`
-                @width: 600px;
                 @height: 60%;
+                @width: 600px;
             `)).toEqual(`export default {
-    width: \"600px\",
-    height: \"60%\"
+    height: \"60%\",
+    width: \"600px\"
 }
 `);
         });
@@ -35,5 +35,16 @@ describe('javascript generation', () => {
 }
 `);
         });
+
+            it('should sort variables', () => {
+                expect(lessToJs(`
+                @width: 600px;
+                @height: 60%;
+            `)).toEqual(`export default {
+    height: \"60%\",
+    width: \"600px\"
+}
+`);
+            });
     });
 });
