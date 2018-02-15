@@ -18,8 +18,8 @@ conditions.
     import fs from 'fs';
     import {generateJsFile} from 'less-vars-to-pretty-js';
 
-    const lessVariablesFile = fs.readFileSync('../styles/variables.less', 'utf8');
-    generateJsFile(lessVariablesFile, '../styles/variables.js');
+    const lessVariables = fs.readFileSync('../styles/variables.less', 'utf8');
+    generateJsFile(lessVariables, '../styles/variables.js');
 ```
 
 ## I want to add it to my gulp pipeline
@@ -30,7 +30,7 @@ conditions.
     import {generateJsFile} from 'less-vars-to-pretty-js';
 
     gulp.task('generate-js-vars', () => {
-        const lessVariablesFile = fs.readFileSync(`../styles/variables.less`, 'utf8');
-        return generateJsFile(lessVariablesFile);
+        const lessVariables = fs.readFileSync(`../styles/variables.less`, 'utf8');
+        return generateJsFile(lessVariables, '../styles/variables.js');
     });
 ```
