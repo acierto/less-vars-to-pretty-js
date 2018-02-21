@@ -6,7 +6,7 @@ describe('javascript generation', () => {
             expect(lessToJs(`
                 @height: 60%;
                 @width: 600px;
-            `)).toEqual(`export default {
+            `)).toEqual(`module.exports = {
     height: \"60%\",
     width: \"600px\"
 }
@@ -17,7 +17,7 @@ describe('javascript generation', () => {
             expect(lessToJs(`
                 @content-component-width: 600px;
                 @content-main-width: 60%;
-            `)).toEqual(`export default {
+            `)).toEqual(`module.exports = {
     \"content-component-width\": \"600px\",
     "content-main-width": \"60%\"
 }
@@ -29,7 +29,7 @@ describe('javascript generation', () => {
                 height: 30px; 
                 @content-component-width: 600px;
                 @content-main-width: 60%;
-            `)).toEqual(`export default {
+            `)).toEqual(`module.exports = {
     \"content-component-width\": \"600px\",
     "content-main-width": \"60%\"
 }
@@ -40,7 +40,7 @@ describe('javascript generation', () => {
                 expect(lessToJs(`
                 @width: 600px;
                 @height: 60%;
-            `)).toEqual(`export default {
+            `)).toEqual(`module.exports = {
     height: \"60%\",
     width: \"600px\"
 }
