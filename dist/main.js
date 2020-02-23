@@ -31,7 +31,7 @@ var lessToJs = exports.lessToJs = function lessToJs(lessFile) {
         sortedLessVars[sortedKey] = lessVars[sortedKey];
     });
 
-    return 'export default ' + (0, _jsObjectPrettyPrint.pretty)(sortedLessVars);
+    return 'module.exports = ' + (0, _jsObjectPrettyPrint.pretty)(sortedLessVars);
 };
 
 var generateJsFile = exports.generateJsFile = function generateJsFile(lessFile, destFile) {
